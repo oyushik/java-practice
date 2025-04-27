@@ -1,4 +1,7 @@
 package lab.bank.exception;
 
-public class AccountNotFoundfException {
+public class AccountNotFoundfException extends Exception {
+    public AccountNotFoundfException(String message) {
+        super(message);
+    }
 }

@@ -1,5 +1,7 @@
 package lab.bank.entity;
 
+import lab.bank.exception.InsufficientBankException;
+
 public class Account {
     private String accountNumber;
     private String ownerName;
@@ -31,10 +33,10 @@ public class Account {
         System.out.println(amount + "원이 입금되었습니다. 현재 잔액: " + balance);
     }
 
-    public void withdraw(double amount) {
+    public void withdraw(double amount) throws InsufficientBankException {
         if (amount > balance) {
-            System.out.println("출금희망액이 잔액을 초과합니다. 현재 잔액: " + balance);
-            return;
+            String message = String.format("예외 발생: 잔액이 부족합니다. 잔액: %.1f", balance);
+            throw new InsufficientBankException(message);
         }
         balance -= amount;
         System.out.println(amount + "원이 출금되었습니다. 현재 잔액: " + balance);

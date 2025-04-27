@@ -2,9 +2,11 @@ package lab.bank.control;
 
 import lab.bank.entity.Bank;
 import lab.bank.entity.SavingsAccount;
+import lab.bank.exception.AccountNotFoundfException;
+import lab.bank.exception.InsufficientBankException;
 
 public class BankDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InsufficientBankException, AccountNotFoundfException {
         Bank bank = new Bank();
 
         System.out.println("\n=== 계좌 생성 ===");
@@ -24,8 +26,10 @@ public class BankDemo {
 
         System.out.println("\n=== 모든 계좌 목록 ===");
         bank.printAllAccounts();
+
         System.out.println("\n====================");
-
-
+        bank.withdraw("AC1000", 30000);
+        bank.withdraw("AC1001", 6000);
+        bank.withdraw("AC2000", 3000);
     }
 }

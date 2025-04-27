@@ -1,5 +1,8 @@
 package lab.bank.entity;
 
+import lab.bank.exception.InsufficientBankException;
+import lab.bank.exception.WithdrawalLimitExceededException;
+
 public class CheckingAccount extends Account {
     private double withdrawlLimit;
 
@@ -13,11 +16,10 @@ public class CheckingAccount extends Account {
     }
 
     @Override
-    public void withdraw(double amount) {
+    public void withdraw(double amount) throws InsufficientBankException {
         if (amount > withdrawlLimit) {
-            System.out.println("출금희망액이 출금 한도를 초과합니다.");
-            // 예외 처리로 빼야 함
-            return;
+            String message = String.format("예외 발생: 출금 한도를 초과했습니다. 출금 한도: %.1f)", withdrawlLimit);
+            throw new WithdrawalLimitExceededException(message);
         }
         super.withdraw(amount);
     }

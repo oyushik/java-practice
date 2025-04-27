@@ -1,5 +1,8 @@
 package lab.bank.entity;
 
+import lab.bank.exception.AccountNotFoundfException;
+import lab.bank.exception.InsufficientBankException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,25 +41,25 @@ public class Bank {
         return ownerName;
     }
 
-    public Account findAccount(String accountNumber) {
+    public Account findAccount(String accountNumber) throws AccountNotFoundfException {
         for (Account account : accounts) {
             if (account.getAccountNumber().equals(accountNumber)) {
                 return account;
             }
         }
-        System.out.println("찾으시는 계좌가 없습니다: " + accountNumber);
-        return null;
+        String message = String.format("예외 발생: 계좌번호 %s에 해당하는 계좌를 찾을 수 없습니다.", accountNumber);
+        throw new AccountNotFoundfException(message);
     }
 
-    public void deposit(String accountNumber, double amount) {
+    public void deposit(String accountNumber, double amount) throws AccountNotFoundfException {
         findAccount(accountNumber).deposit(amount);
     }
 
-    public void withdraw(String accountNumber, double amount) {
+    public void withdraw(String accountNumber, double amount) throws InsufficientBankException, AccountNotFoundfException {
         findAccount(accountNumber).withdraw(amount);
     }
 
-    public void transfer(String fromAccountNumber, String toAccountNumber, double amount) {
+    public void transfer(String fromAccountNumber, String toAccountNumber, double amount) throws InsufficientBankException, AccountNotFoundfException {
         Account fromAccount = findAccount(fromAccountNumber);
         Account toAccount = findAccount(toAccountNumber);
 
