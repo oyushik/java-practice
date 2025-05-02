@@ -1,4 +1,4 @@
-package lab.library.entity;
+package mylab.library.entity;
 
 public class Book {
     private String title;

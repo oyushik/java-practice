@@ -1,6 +1,6 @@
-package lab.bank.entity;
+package mylab.bank.entity;
 
-import lab.bank.exception.InsufficientBankException;
+import mylab.bank.exception.InsufficientBankException;
 
 public class Account {
     private String accountNumber;

@@ -1,4 +1,4 @@
-package lab.bank.exception;
+package mylab.bank.exception;
 
 public class WithdrawalLimitExceededException extends InsufficientBankException {
     public WithdrawalLimitExceededException(String message) {

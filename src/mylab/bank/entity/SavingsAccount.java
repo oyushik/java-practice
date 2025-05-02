@@ -1,4 +1,4 @@
-package lab.bank.entity;
+package mylab.bank.entity;
 
 public class SavingsAccount extends Account {
     private double interestRate;

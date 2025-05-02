@@ -1,4 +1,4 @@
-package lab.bank.exception;
+package mylab.bank.exception;
 
 public class InsufficientBankException extends Exception {
     public InsufficientBankException(String message) {

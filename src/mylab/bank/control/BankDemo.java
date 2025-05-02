@@ -1,9 +1,9 @@
-package lab.bank.control;
+package mylab.bank.control;
 
-import lab.bank.entity.Bank;
-import lab.bank.entity.SavingsAccount;
-import lab.bank.exception.AccountNotFoundfException;
-import lab.bank.exception.InsufficientBankException;
+import mylab.bank.entity.Bank;
+import mylab.bank.entity.SavingsAccount;
+import mylab.bank.exception.AccountNotFoundfException;
+import mylab.bank.exception.InsufficientBankException;
 
 public class BankDemo {
     public static void main(String[] args) throws InsufficientBankException, AccountNotFoundfException {

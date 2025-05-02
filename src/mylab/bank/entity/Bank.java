@@ -1,7 +1,7 @@
-package lab.bank.entity;
+package mylab.bank.entity;
 
-import lab.bank.exception.AccountNotFoundfException;
-import lab.bank.exception.InsufficientBankException;
+import mylab.bank.exception.AccountNotFoundfException;
+import mylab.bank.exception.InsufficientBankException;
 
 import java.util.ArrayList;
 import java.util.List;

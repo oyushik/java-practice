@@ -1,6 +1,6 @@
-package lab.student.control;
+package mylab.student.control;
 
-import lab.student.entity.Student;
+import mylab.student.entity.Student;
 
 public class StudentTest {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package lab.library.control;
+package mylab.library.control;
 
-import lab.library.entity.*;
+import mylab.library.entity.*;
 
 
 public class LibraryManagementSystem {
